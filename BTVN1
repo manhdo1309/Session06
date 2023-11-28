@@ -1,0 +1,12 @@
+#include <stdio.h>
+int main(){
+	int num;
+	for(int i = 1; i < 10; i++)
+	{
+		for(num = 1; num < 10; num++)
+		{
+		int mul = num * i;
+		printf("Bang cuu chuong n: %d * %d = %d\n", num, i, mul);
+		}
+	}
+}
