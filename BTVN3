@@ -1,0 +1,62 @@
+#include <stdio.h>
+#include <stdlib.h>
+int main(){
+	int num1, num2, num3;
+	printf("Nhap vao 3 so nguyen: ");
+	scanf("%d %d %d", &num1, &num2, &num3);
+	do
+	{
+		printf("CALCULATOR\n");
+		printf("1. Tong 3 so nguyen\n");
+		printf("2. Trung binh cong cua 3 so nguyen\n");
+		printf("3. So lon nhat, nho nhat trong 3 so\n");
+		printf("4. Thoat\n");
+		printf("Lua chon cua ban ");
+		int choice;
+		scanf("%d", &choice);
+		int total;
+		float avg;
+		char e;
+		switch(choice)
+		{
+			case 1:
+				total = num1 + num2 + num3;
+				printf("Tong cua 3 so la %d\n", total);
+				break;
+			case 2:
+				avg = (num1 + num2 + num3) / 3;
+				printf("Trung binh cong cua 3 so la %.2f\n", avg);
+				break;
+			case 3:
+				if(num1 > num2 && num1 > num3 && num2 > num3)
+				{
+					printf("So lon nhat la %d va so nho nhat la %d\n", num1, num3);
+				}
+				else if(num2 > num1 && num2 > num3 && num1 > num3)
+				{
+					printf("So lon nhat la %d va so nho nhat la %d\n", num2, num3);
+				}
+				else if(num1 > num2 && num1 > num3 && num3 > num2)
+				{
+					printf("So lon nhat la %d va so nho nhat la %d\n", num1, num2);
+				}
+				else if(num2 > num1 && num2 > num3 && num3 > num1)
+				{
+					printf("So lon nhat la %d va so nho nhat la %d\n", num2, num1);
+				}
+				else if(num3 > num1 && num3 > num2 && num1 > num2)
+				{
+					printf("So lon nhat la %d va so nho nhat la %d\n", num3, num2);
+				}
+				else if(num3 > num1 && num3 > num2 && num2 > num1)
+				{
+					printf("So lon nhat la %d va so nho nhat la %d\n", num3, num1);
+				}
+				break;
+			case 4:
+				exit(e);
+			default:
+				printf("Vui long chon tu 1-4\n");
+		}
+	}while("Vui long chon tu 1-4\n");
+}
