@@ -1,0 +1,82 @@
+#include <stdio.h>
+#include <stdlib.h>
+int main(){
+	int n;
+	printf("Nhap vao mot so nguyen n: ");
+	scanf("%d", &n);
+	do
+	{
+		printf("PRACTICE\n");
+		printf("1. In day so chia het cho 2 va giam dan\n");
+		printf("2. In cac so nho hon n va tinh tong\n");
+		printf("3. In ra cac uoc so chan cua n\n");
+		printf("4. In ra cac uoc so le va so luong cac uoc le cua n\n");
+		printf("5. In ra uoc so le lon nhat cua n\n");
+		printf("6. Thoat\n");
+		printf("Lua chon cua ban: ");
+		int choice;
+		int i, sum, count, max;
+		sum = 0;
+		count = 0;
+		char e;
+		scanf("%d", &choice);
+		switch(choice)
+		{
+			case 1:
+				for(i = n; i > 0; i--)
+				{
+					if(i % 2 == 0)
+					{
+						printf("Cac so chia het cho 2 giam dan: %d", i);
+					}
+				}
+				break;
+			case 2:
+				for(i = 0; i < n; i++)
+				{
+					printf("so nho hon n la: %d\n", i);
+					sum += i;
+				}
+				printf("Tong cac so nho hon n = %d \n", sum);
+				break;
+			case 3:
+				for(i = 1; i < n; i++)
+				{
+					if(i % 2 == 0 && n % i == 0)
+					{
+						printf("Uoc so chan cua n: %d \n", i);
+					}
+				}
+				if(i % 2 != 0)
+				{
+					printf("n khong co uoc so chan\n");
+				}
+				break;
+			case 4:
+				for (i = 1; i <= n; i++)
+				{
+					if(n % i == 0 && i % 2 != 0)
+					{
+						printf("Uoc so le cua n: %d \n", i);
+						count++;
+					}
+				}
+				printf("So luong uoc le = %d\n", count);
+				break;
+			case 5:
+				for (i = 1; i <= n; i++)
+				{
+						if(i > max && n % i == 0 && i % 2 != 0)
+						{
+							max = i;
+						}
+				}
+				printf("Uoc so le lon nhat cua n la: %d\n", max);
+				break;
+			case 6:
+				exit(e);
+			default:
+				printf("Vui long chon tu 1-6\n");
+		}
+	}while("Vui long chon tu 1-6\n");
+}
